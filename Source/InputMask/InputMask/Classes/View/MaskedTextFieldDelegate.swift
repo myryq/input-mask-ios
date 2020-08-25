@@ -37,6 +37,7 @@ import UIKit
  Might be used as a decorator, which forwards UITextFieldDelegate calls to its own listener.
  */
 @IBDesignable
+@objc
 open class MaskedTextFieldDelegate: NSObject, UITextFieldDelegate {
 
     open weak var listener: MaskedTextFieldDelegateListener?
