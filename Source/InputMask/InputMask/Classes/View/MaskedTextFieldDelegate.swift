@@ -160,9 +160,9 @@ open class MaskedTextFieldDelegate: NSObject, UITextFieldDelegate {
         return primaryMask.totalValueLength
     }
     
-    @discardableResult
-    open func put(text: String, into field: UITextField, autocomplete putAutocomplete: Bool? = nil) -> Mask.Result {
-        let autocomplete: Bool = putAutocomplete ?? self.autocomplete
+    @objc
+    open func put(text: String, into field: UITextField) -> Mask.Result {
+        let autocomplete: Bool = self.autocomplete
         let mask:         Mask = pickMask(
             forText: CaretString(
                 string: text,
