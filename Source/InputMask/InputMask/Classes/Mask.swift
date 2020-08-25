@@ -292,7 +292,9 @@ public class Mask: CustomDebugStringConvertible, CustomStringConvertible {
     private struct AutocompletionStack {
         private var stack = [Next]()
         
-        var isEmpty: Bool { stack.isEmpty }
+        var isEmpty: Bool {
+         return stack.isEmpty;
+        }
         
         mutating func pushBack(next: Next?) {
             if let next: Next = next {
