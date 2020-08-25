@@ -160,8 +160,7 @@ open class MaskedTextFieldDelegate: NSObject, UITextFieldDelegate {
         return primaryMask.totalValueLength
     }
     
-    @objc
-    open func put(text: String, into field: UITextField) -> Mask.Result {
+    @objc open func put(text: String, into field: UITextField) {
         let autocomplete: Bool = self.autocomplete
         let mask:         Mask = pickMask(
             forText: CaretString(
@@ -185,7 +184,6 @@ open class MaskedTextFieldDelegate: NSObject, UITextFieldDelegate {
         )
         
         notifyOnMaskedTextChangedListeners(forTextField: field, result: result)
-        return result
     }
     
     open func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
